@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2026 at 08:04 AM
+-- Generation Time: Feb 08, 2026 at 04:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -69,7 +69,8 @@ CREATE TABLE `carts` (
 
 INSERT INTO `carts` (`id`, `user_id`, `product_id`, `product_image_id`, `quantity`, `price`, `total`, `created_at`, `updated_at`) VALUES
 (7, 3, 1, NULL, 1, 2000.00, 2000.00, '2026-02-07 09:16:22', '2026-02-07 09:16:22'),
-(8, 2, 3, 6, 1, 500.00, 500.00, '2026-02-07 09:39:07', '2026-02-07 09:39:07');
+(8, 2, 3, 6, 1, 500.00, 500.00, '2026-02-07 09:39:07', '2026-02-07 09:39:07'),
+(16, 1, 1, NULL, 3, 2000.00, 6000.00, '2026-02-08 09:12:50', '2026-02-08 09:22:17');
 
 -- --------------------------------------------------------
 
@@ -180,7 +181,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `order_number`, `subtotal`, `tax`, `total`, `status`, `payment_method`, `payment_id`, `notes`, `created_at`, `updated_at`) VALUES
 (1, 1, 'ORD-HURPDM2S', 1100.00, 0.00, 1100.00, 'pending', 'web', NULL, NULL, '2026-02-07 12:35:41', '2026-02-07 12:35:41'),
-(2, 1, 'ORD-WATLJKYQ', 700.00, 0.00, 700.00, 'pending', 'web', NULL, NULL, '2026-02-07 13:05:26', '2026-02-07 13:05:26');
+(2, 1, 'ORD-WATLJKYQ', 700.00, 0.00, 700.00, 'pending', 'web', NULL, NULL, '2026-02-07 13:05:26', '2026-02-07 13:05:26'),
+(3, 1, 'ORD-FJG4PXYC', 200.00, 0.00, 200.00, 'pending', 'web', NULL, NULL, '2026-02-08 02:17:48', '2026-02-08 02:17:48');
 
 -- --------------------------------------------------------
 
@@ -209,7 +211,8 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, 
 (3, 1, 3, 1, 500.00, 500.00, '2026-02-07 12:35:41', '2026-02-07 12:35:41'),
 (4, 1, 2, 1, 200.00, 200.00, '2026-02-07 12:35:41', '2026-02-07 12:35:41'),
 (5, 2, 3, 1, 500.00, 500.00, '2026-02-07 13:05:26', '2026-02-07 13:05:26'),
-(6, 2, 2, 1, 200.00, 200.00, '2026-02-07 13:05:26', '2026-02-07 13:05:26');
+(6, 2, 2, 1, 200.00, 200.00, '2026-02-07 13:05:26', '2026-02-07 13:05:26'),
+(7, 3, 2, 1, 200.00, 200.00, '2026-02-08 02:17:48', '2026-02-08 02:17:48');
 
 -- --------------------------------------------------------
 
@@ -246,7 +249,9 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `quantity`, `created_at`, `updated_at`) VALUES
 (1, 'wallper', 'aaaaa', 2000.00, 1, '2026-02-07 07:23:19', '2026-02-07 07:23:19'),
 (2, 'Mobile Cover', 'aaaaaa', 200.00, 5, '2026-02-07 08:53:00', '2026-02-07 09:31:35'),
-(3, 'Water Bottle', 'aaaa', 500.00, 5, '2026-02-07 09:38:45', '2026-02-07 09:38:45');
+(3, 'Water Bottle', 'aaaa', 500.00, 5, '2026-02-07 09:38:45', '2026-02-07 09:38:45'),
+(4, 'Watch', 'aaaaaaaa', 1000.00, 50, '2026-02-08 02:22:39', '2026-02-08 02:22:39'),
+(5, 'Book', 'aaaaa', 200.00, 5, '2026-02-08 06:30:57', '2026-02-08 09:07:30');
 
 -- --------------------------------------------------------
 
@@ -272,7 +277,10 @@ INSERT INTO `product_images` (`id`, `product_id`, `image`, `created_at`, `update
 (3, 2, 'products/0rePFc5lX78npnCGqJ09MTNc5YO9QOxemmR7jruc.webp', '2026-02-07 08:53:00', '2026-02-07 08:53:00'),
 (4, 2, 'products/ICqztARp8rOrekElVy66Eb0ffJE0pNu65pppnYfD.jpg', '2026-02-07 08:53:16', '2026-02-07 08:53:16'),
 (5, 2, 'products/6bULlmnSal6MoAi5R89JUTv52zrUgwgcXTRGDb2Q.jpg', '2026-02-07 08:53:29', '2026-02-07 08:53:29'),
-(6, 3, 'products/WpxBulhpNb4o6fyjlOj92T8GzlFVzVhuIOmHycFM.jpg', '2026-02-07 09:38:45', '2026-02-07 09:38:45');
+(6, 3, 'products/WpxBulhpNb4o6fyjlOj92T8GzlFVzVhuIOmHycFM.jpg', '2026-02-07 09:38:45', '2026-02-07 09:38:45'),
+(7, 4, 'products/oGMJ9eOOpxyM76pE66tKRMnKNHsYuczyeQwGvhCW.jpg', '2026-02-08 02:22:42', '2026-02-08 02:22:42'),
+(8, 4, 'products/KGGtMrNM8Mpdfcsv2PBcTkpCim7ftJmQXBzcltu9.jpg', '2026-02-08 02:23:01', '2026-02-08 02:23:01'),
+(9, 5, 'products/LKhKozYHzBKUEYAQgdOqb9VMl9GDErn1RFERt4By.jpg', '2026-02-08 09:07:30', '2026-02-08 09:07:30');
 
 -- --------------------------------------------------------
 
@@ -294,7 +302,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('5qZDCkHAcDHC85rVaCckMg29AQjhHM43Do9Cp0zA', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.4.28 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMXlCSWlVV2dqaW41OFdyTHBKWEpNYVVianBwQWluMFlocG5oTk9CTSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7czo1OiJyb3V0ZSI7czoxNDoicHJvZHVjdHMuaW5kZXgiO319', 1770547214),
 ('aZkvFSvsQiqZjNPABJVgQ09YQ9PPrd14ili9BRMs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.4.28 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMkNzdUEyZnU0S016dlpCUnNPZFE2VkpxN2xhbng0RHhmYUFZbU50TiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7czo1OiJyb3V0ZSI7czoxNDoicHJvZHVjdHMuaW5kZXgiO319', 1770482958),
+('SiER1kKiDztZhvtBdGbDf0NkBC84t6ncVubcWA2b', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.4.28 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSmFNb2ZUbWVESWNWUnc2STNaV3pWOVg1R3VUUUJHeFJCVEJHc0o3ZSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0cyI7czo1OiJyb3V0ZSI7czoxNDoicHJvZHVjdHMuaW5kZXgiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1770538700),
 ('sUMYxMYRiQ8gOTVo7KVimOUW5J9CdKZ4YDLsKGAu', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMjZ6b0I3UnlYeEhnOXVwZDl3WndyRUs2NGtPZjVxaEw4cGphUmhmbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9teS1vcmRlcnMvMiI7czo1OiJyb3V0ZSI7czoxNDoibXktb3JkZXJzLnNob3ciO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1770489334);
 
 -- --------------------------------------------------------
@@ -321,9 +331,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `email_verified_at`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Test User', 'test@example.com', NULL, '2026-02-07 07:41:28', '$2y$10$lOHXgB7sm2TtlvD2QUuDN..ru7QjzCsmSiccfNLs5/48GlfUHQQRq', 0, '7cSwmxskPm7DEWF99CAaXoRtsPMEhx3ShG9k1eK36ONi6sZYRwscqUzOfMib', '2026-02-07 07:41:28', '2026-02-07 07:41:28'),
+(1, 'Test User', 'test@example.com', NULL, '2026-02-07 07:41:28', '$2y$10$lOHXgB7sm2TtlvD2QUuDN..ru7QjzCsmSiccfNLs5/48GlfUHQQRq', 0, '22bvJSg8IrMXsbx5WnJ2mUPBeoznh9KgN9FMZdN5O4twp3dN3JZok5rc3NLG', '2026-02-07 07:41:28', '2026-02-07 07:41:28'),
 (2, 'Pratiksha Terse', 'pratiksha@gmail.com', NULL, NULL, '$2y$12$R/mhxp03AUJX3SrBMqIG4e/HjovsN2CwsxkJEMCDZrBKM9g0ExCoK', 1, NULL, '2026-02-07 08:32:31', '2026-02-07 08:32:31'),
-(3, 'Pratiksha Terse', 'tersepratiksha227@gmail.com', NULL, NULL, '$2y$12$UHlGrAOGXFi0ozN8ScL3lui6kRSsEvutJpbiiJQ2xTQf.josd/r6.', 0, NULL, '2026-02-07 09:16:11', '2026-02-07 09:16:11');
+(3, 'Pratiksha Terse', 'tersepratiksha227@gmail.com', NULL, NULL, '$2y$12$UHlGrAOGXFi0ozN8ScL3lui6kRSsEvutJpbiiJQ2xTQf.josd/r6.', 0, NULL, '2026-02-07 09:16:11', '2026-02-07 09:16:11'),
+(4, 'Pratiksha', 'pratiksha22@gmail.com', NULL, NULL, '$2y$12$wLi4foH9MnzNZRSj.hYZRuWJ5Z8mb4ByRCBlOKWhVlSDUcXzLP9Dq', 0, NULL, '2026-02-08 03:46:08', '2026-02-08 03:46:08'),
+(5, 'Admin User', 'admin@example.com', NULL, NULL, '$2y$12$IXGLC6RjAHklkqnfMAIFHeAG0dETqH70X0NHBTf2AJmwvgSvdNS9u', 0, NULL, '2026-02-08 05:05:45', '2026-02-08 05:05:45'),
+(6, 'Admin User', 'admin2@example.com', NULL, NULL, '$2y$12$4sDiwMazb/KfKmF4it.PquktMdr30aGMAIko1g.TaeMlLt3/CZeM.', 0, NULL, '2026-02-08 05:34:30', '2026-02-08 05:34:30'),
+(7, 'Admin User', 'adminn@example.com', NULL, NULL, '$2y$12$OqsYxoc5oIldS455rNGo7OWQZBoiH/b/4nQTHpi4BSjb7ki5icb2W', 1, NULL, '2026-02-08 05:43:38', '2026-02-08 05:43:38');
 
 --
 -- Indexes for dumped tables
@@ -438,7 +452,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -462,31 +476,31 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
