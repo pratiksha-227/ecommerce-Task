@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text text-muted small">{{ Str::limit($product->description, 80) }}</p>
-                    <p class="mb-2"><strong>₹{{ number_format($product->price, 2) }}</strong> <span class="text-muted">({{ $product->images->count() }} images)</span></p>
+                    <p class="mb-2"><strong>₹{{ number_format($product->price, 2) }}</strong></p>
                     @if(isset($cartQtyByProduct[$product->id]))
                         <p class="mb-2 small"><span class="badge bg-success">In cart ({{ $cartQtyByProduct[$product->id] }})</span></p>
                     @endif

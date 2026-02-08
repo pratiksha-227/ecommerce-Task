@@ -149,14 +149,17 @@ class CartController extends Controller
         }
     }
 
-    public function update(Request $request, int $id): JsonResponse
+    public function update(Request $request, string|int $id): JsonResponse
     {
+        $id = (int) $id;
+        $userId = (int) $request->input('user_id', $request->query('user_id', self::USER_ID));
+
         try {
             $validated = $request->validate([
                 'quantity' => 'required|integer|min:1',
             ]);
 
-            $cart = Cart::where('id', $id)->where('user_id', self::USER_ID)->firstOrFail();
+            $cart = Cart::where('id', $id)->where('user_id', $userId)->firstOrFail();
             $cart->quantity = (int) $validated['quantity'];
             $cart->total = round($cart->price * $cart->quantity, 2);
             $cart->save();
@@ -187,10 +190,13 @@ class CartController extends Controller
         }
     }
 
-    public function destroy(int $id): JsonResponse
+    public function destroy(Request $request, string|int $id): JsonResponse
     {
+        $id = (int) $id;
+        $userId = (int) $request->input('user_id', $request->query('user_id', self::USER_ID));
+
         try {
-            $cart = Cart::where('id', $id)->where('user_id', self::USER_ID)->firstOrFail();
+            $cart = Cart::where('id', $id)->where('user_id', $userId)->firstOrFail();
             $cart->delete();
             return response()->json([
                 'success' => true,

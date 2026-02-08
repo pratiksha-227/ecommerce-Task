@@ -65,6 +65,11 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><span class="dropdown-item-text small text-muted">{{ auth()->user()->is_admin ? 'Admin' : 'Customer' }}</span></li>
                                 <li><hr class="dropdown-divider"></li>
+                                @if(auth()->user()->is_admin)
+                                <li><a class="dropdown-item" href="{{ route('products.create') }}">Add Product</a></li>
+                                <li><a class="dropdown-item" href="{{ route('orders.index') }}">All Orders</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                @endif
                                 <li><a class="dropdown-item" href="{{ route('my-orders.index') }}">My Orders</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
@@ -125,6 +130,11 @@
                         <ul class="dropdown-menu dropdown-menu-end w-100">
                             <li><span class="dropdown-item-text small text-muted">{{ auth()->user()->is_admin ? 'Admin' : 'Customer' }}</span></li>
                             <li><hr class="dropdown-divider"></li>
+                            @if(auth()->user()->is_admin)
+                            <li><a class="dropdown-item" href="{{ route('products.create') }}">Add Product</a></li>
+                            <li><a class="dropdown-item" href="{{ route('orders.index') }}">All Orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            @endif
                             <li><a class="dropdown-item" href="{{ route('my-orders.index') }}">My Orders</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
